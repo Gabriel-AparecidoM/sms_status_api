@@ -8,7 +8,7 @@ class Message
   field :status,    type: String
 
   VALID_STATUSES = %w[SENT DELIVERED FAILED].freeze
-  
+
   validates_presence_of :serial_id, :phone, :body
   validates_uniqueness_of :serial_id
   validates_numericality_of :serial_id

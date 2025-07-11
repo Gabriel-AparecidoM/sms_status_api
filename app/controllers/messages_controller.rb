@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:update]
+  before_action :set_message, only: [ :update ]
   def create
     @message = Message.new(message_params)
     if @message.save
@@ -25,6 +25,6 @@ class MessagesController < ApplicationController
 
   def set_message
     @message = Message.find_by(serial_id: params[:serial_id])
-    render json: { error: 'Message not found' }, status: :not_found unless @message
+    render json: { error: "Message not found" }, status: :not_found unless @message
   end
 end
